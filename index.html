@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>エスケープオペレーション　タレント取得上限</title>
+  <title>エスケープオペレーション<br>タレント取得上限</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -28,6 +28,7 @@
       color: #333;
       margin-bottom: 24px;
       font-size: 1.5rem;
+      white-space: pre-line;
     }
     .info-card {
       background: #f9f9f9;
@@ -84,14 +85,14 @@
 </head>
 <body>
   <div class="container">
-    <h1 id="title">エスケープオペレーション　タレント取得上限</h1>
+    <h1 id="title">エスケープオペレーション<br>タレント取得上限</h1>
     <div class="info-card">
       <i class="fas fa-calendar-alt"></i>
-      <span id="date">日付: 2025年7月15日</span>
+      <span id="date">日付: </span>
     </div>
     <div class="info-card">
       <i class="fas fa-clock"></i>
-      <span id="time">時刻: 16時26分</span>
+      <span id="time">時刻: </span>
     </div>
     <div class="info-card">
       <i class="fas fa-calendar-day"></i>
@@ -103,10 +104,10 @@
     </div>
   </div>
   <script>
-    // 多言語リソース
+    // 多言語リソース（改行対応）
     const resources = {
       'ja': {
-        title: 'エスケープオペレーション　タレント取得上限',
+        title: 'エスケープオペレーション\nタレント取得上限',
         date: '日付',
         time: '時刻',
         days: 'シーズン開始からの日数',
@@ -114,7 +115,7 @@
         notStarted: '開始前です'
       },
       'en': {
-        title: 'Escape Operation Talent Acquisition Limit',
+        title: 'Escape Operation\nTalent Acquisition Limit',
         date: 'Date',
         time: 'Time',
         days: 'Days since season start',
@@ -122,7 +123,7 @@
         notStarted: 'Not started yet'
       },
       'zh': {
-        title: '逃脱行动 人才获取上限',
+        title: '逃脱行动\n人才获取上限',
         date: '日期',
         time: '时间',
         days: '赛季开始天数',
@@ -130,7 +131,7 @@
         notStarted: '尚未开始'
       },
       'ko': {
-        title: '탈출 작전 인재 획득 한도',
+        title: '탈출 작전\n인재 획득 한도',
         date: '날짜',
         time: '시간',
         days: '시즌 시작 후 일수',
@@ -156,8 +157,8 @@
       document.getElementById('count-label').textContent = res.count;
 
       const now = new Date();
-      // シーズン開始日時: 2025年7月18日 午前1時 (JST)
-      const start = new Date(Date.UTC(2025, 6, 17, 16, 0, 0)); // UTCで2025-07-17 16:00:00
+      // シーズン開始日時: 2025年7月18日 午前1時 (JST) = UTC 2025-07-17 16:00:00
+      const start = new Date(Date.UTC(2025, 6, 17, 16, 0, 0));
 
       let days = 0;
       let count = 0;
